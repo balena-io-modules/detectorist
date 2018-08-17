@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/resin-io-modules/detectorist/issues"
   },
-  "homepage": "https://github.com/resin-io-modules/detectorist#readme"
+  "homepage": "https://github.com/resin-io-modules/detectorist#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "lodash": "^4.17.10",
+    "yamljs": "^0.3.0"
+  },
+  "bin": {
+    "detectorist": "./bin/detectorist.js"
+  }
 }
