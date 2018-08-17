@@ -1,0 +1,22 @@
+{
+  "name": "detectorist",
+  "version": "0.0.1",
+  "description": "Tool to determine what sort of project a repo contains",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/resin-io-modules/detectorist.git"
+  },
+  "author": "Resin.io",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/resin-io-modules/detectorist/issues"
+  },
+  "homepage": "https://github.com/resin-io-modules/detectorist#readme"
+}
