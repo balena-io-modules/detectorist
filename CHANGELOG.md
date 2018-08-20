@@ -5,4 +5,8 @@
 
 ## v0.1.0 - 2018-08-20
 
+## v0.2.0 - 2018-08-20
+
+* Plugins: Switch to plugin-style architecture [John (Jack) Brown]
+
 * Cli: Add CLI interface [John (Jack) Brown]
