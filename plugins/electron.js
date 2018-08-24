@@ -1,8 +1,9 @@
 'use strict';
 
-const Promise  = require('bluebird')
+const _                 = require('lodash')
+const Promise           = require('bluebird')
 const { readFileAsync } = Promise.promisifyAll(require('fs'))
-const { join } = require('path')
+const { join }          = require('path')
 
 module.exports = {
   name: 'electron',
@@ -15,7 +16,7 @@ module.exports = {
       throw err
     })
     .then(str => {
-      if (JSON.parse(str).dependencies.electron) return true
+      if (_.get(JSON.parse(str), 'dependencies.electron', false)) return true
 
       return false
     })
