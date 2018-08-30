@@ -8,12 +8,12 @@ module.exports = {
   name: 'node',
   test: path => {
     return readFileAsync(join(path, 'package.json'))
+    .then(() => true)
     .catch(err => {
       if (err.code === 'ENOENT') return false
       console.error(err.message)
       throw err
     })
-    .return(true)
   }
 }
 

@@ -8,15 +8,15 @@ module.exports = {
   name: 'npm',
   test: path => {
     return readFileAsync(join(path, 'package.json'))
-    .catch(err => {
-      if (err.code === 'ENOENT') return false
-      console.error(err.message)
-      throw err
-    })
     .then(str => {
       if (JSON.parse(str).private) return false
 
       return true
+    })
+    .catch(err => {
+      if (err.code === 'ENOENT') return false
+      console.error(err.message)
+      throw err
     })
   }
 }

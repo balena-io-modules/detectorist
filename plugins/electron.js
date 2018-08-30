@@ -10,15 +10,15 @@ module.exports = {
   description: 'Checks for the presence of electron in the package.json dependencies',
   test: path => {
     return readFileAsync(join(path, 'package.json'))
-    .catch(err => {
-      if (err.code === 'ENOENT') return false
-      console.error(err.message)
-      throw err
-    })
     .then(str => {
       if (_.get(JSON.parse(str), 'dependencies.electron', false)) return true
 
       return false
+    })
+    .catch(err => {
+      if (err.code === 'ENOENT') return false
+      console.error(err.message)
+      throw err
     })
   }
 }

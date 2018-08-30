@@ -8,12 +8,12 @@ module.exports = {
   name: 'docker',
   test: path => {
     return accessAsync(join(path, 'Dockerfile'), constants.F_OK)
+    .then(() => true)
     .catch(err => {
       if (err.code === 'ENOENT') return false
       console.error(err.message)
       throw err
     })
-    .return(true)
   }
 }
 
