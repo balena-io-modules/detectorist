@@ -7,7 +7,7 @@ const { join } = require('path')
 module.exports = {
   name: 'docker',
   test: path => {
-    return accessAsync(join(path, 'package.json'), constants.F_OK)
+    return accessAsync(join(path, 'Dockerfile'), constants.F_OK)
     .catch(err => {
       if (err.code === 'ENOENT') return false
       console.error(err.message)
