@@ -5,6 +5,10 @@
 
 ## v0.1.0 - 2018-08-20
 
+## v0.2.5 - 2018-08-30
+
+* Plugins: Fix error handling causing false positives [John (Jack) Brown]
+
 ## v0.2.4 - 2018-08-30
 
 * Plugins/docker: Fix docker detection [John (Jack) Brown]
