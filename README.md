@@ -1,4 +1,4 @@
-# Detecctorist
+# Detectorist
 
 Detectorist is a library containing heuristics for determining the type of
 project in a directory.
