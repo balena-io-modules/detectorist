@@ -5,9 +5,9 @@ const fs = Promise.promisifyAll(require('fs'))
 const { join } = require('path')
 
 const detect = require('../lib/index.js')
-const path = process.argv[2]
+const path = process.argv[2] || '.'
 
-if (!path) {
+if (path === 'help' || path === '-h' || path === '--help') {
   console.log('Usage')
   console.log('detectorist <path>\n')
   console.log('Returns a JSON object on STDOUT with key/value')
@@ -22,7 +22,7 @@ if (!path) {
   })
   .then(() => process.exit(1))
 } else {
-  detect(process.argv[2])
+  detect(path)
   .then(res => {
     console.log(JSON.stringify(res, null, 2))
   })

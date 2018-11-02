@@ -3,18 +3,17 @@
 const Promise           = require('bluebird')
 const { readFileAsync } = require('../lib/utils')
 const { join }          = require('path')
+const YAML                                      = require('yamljs')
 
 module.exports = {
-  name: 'nodeCli',
-  priority: 40,
+  name: 'repoYml',
+  priority: 0,
   test: path => {
-    return readFileAsync(join(path, 'package.json'))
+    return readFileAsync(join(path, 'repo.yml'))
     .then(str => {
       if (!str) return false
 
-      if (JSON.parse(str).bin) return true
-
-      return false
+      return YAML.parse(str).type
     })
   }
 }

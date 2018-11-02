@@ -5,9 +5,9 @@ const { accessAsync } = require('../lib/utils')
 const { join }          = require('path')
 
 module.exports = {
-  name: 'node',
+  name: 'rust',
   test: path => {
-    return accessAsync(join(path, 'package.json'))
+    return accessAsync(join(path, 'cargo.toml'))
     .then(res => !!res)
   }
 }

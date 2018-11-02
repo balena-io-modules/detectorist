@@ -6,6 +6,7 @@ const { join }          = require('path')
 
 module.exports = {
   name: 'npm',
+  priority: 50,
   test: path => {
     return readFileAsync(join(path, 'package.json'))
     .then(str => {

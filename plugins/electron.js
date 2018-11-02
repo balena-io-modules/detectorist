@@ -7,6 +7,7 @@ const { join }          = require('path')
 
 module.exports = {
   name: 'electron',
+  priority: 30,
   description: 'Checks for the presence of electron in the package.json dependencies',
   test: path => {
     return readFileAsync(join(path, 'package.json'))
