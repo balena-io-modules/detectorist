@@ -5,6 +5,10 @@
 
 ## v0.1.0 - 2018-08-20
 
+## v0.3.0 - 2018-08-31
+
+* Plugins/docker: Detect docker repos from .resinci.yml files [John (Jack) Brown]
+
 ## v0.2.5 - 2018-08-30
 
 * Plugins: Fix error handling causing false positives [John (Jack) Brown]

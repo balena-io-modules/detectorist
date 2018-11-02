@@ -1,6 +1,6 @@
 {
   "name": "detectorist",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "Tool to determine what sort of project a repo contains",
   "main": "lib/index.js",
   "directories": {
