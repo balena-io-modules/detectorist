@@ -1,14 +1,14 @@
-# Detecctorist
+# Detectorist
 
 Detectorist is a library containing heuristics for determining the type of
 project in a directory.
 
-## Install - library
+## Install as a library
 
 Run `npm install --save detectorist` to install Detectorist and add it to your
 `package.json`.
 
-## Install - CLI
+## Install as a CLI
 
 Run `npm install -g detectorist.
 
