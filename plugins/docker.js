@@ -15,16 +15,16 @@ module.exports = {
       return true
     })
     .catch(err => {
-      if (err.code === 'ENOENT') return readFileAsync(join(path, '.resinci.yml'), 'utf8')
+      if (err.code === 'ENOENT') return false
       console.error(err.message)
       throw err
     })
-    .then(str => {
-      const config = YAML.parse(str)
-      if (_.get(config, 'docker.builds', []).length > 0) return true
-
-      return false
-    })
+    // .then(str => {
+    //   const config = YAML.parse(str)
+    //   if (_.get(config, 'docker.builds', []).length > 0) return true
+    //
+    //   return false
+    // })
   }
 }
 
