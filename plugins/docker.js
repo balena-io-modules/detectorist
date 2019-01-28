@@ -6,15 +6,13 @@ const { accessAsync, constants, readFileAsync } = Promise.promisifyAll(require('
 const { join }                                  = require('path')
 const YAML                                      = require('yamljs')
 
-let result = false
-
 module.exports = {
   name: 'docker',
   test: path => {
     return accessAsync(join(path, 'Dockerfile'), constants.F_OK)
     .then(() => {
-      // Dockerfile exists; set result to true
-      result = true
+      // Dockerfile exists; this is definitely a docker repo
+      return true
     })
     .catch(err => {
       if (err.code !== 'ENOENT') {
@@ -25,17 +23,12 @@ module.exports = {
       return readFileAsync(join(path, '.resinci.yml'), 'utf8')
       .then(str => {
         const config = YAML.parse(str)
-        // IF docker is explicitly set to false then its not a docker repo
-        if (config.docker === false) return false
-        // If builds are defined then it is definitely a docker repo
         if (_.get(config, 'docker.builds', []).length > 0) return true
 
-        // Otherwise, its a docker repo only if it has a dockerfile
-        return result || false
+        return false
       })
       .catch(err => {
-        // Otherwise, its a docker repo only if it has a dockerfile
-        if (err.code === 'ENOENT') return result || false
+        if (err.code === 'ENOENT') return false
 
         console.error(err.message)
         throw err
@@ -43,3 +36,4 @@ module.exports = {
     })
   }
 }
+
