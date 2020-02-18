@@ -5,6 +5,6 @@ const { readFileAsync } = Promise.promisifyAll(require('fs'))
 const { fromRepoYML }   = require('../lib/utils.js')
 
 module.exports = {
-  name: 'nodeCli',
+  name: 'node-cli',
   test: fromRepoYML('node-cli')
 }
