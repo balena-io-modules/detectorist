@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "lint-fix": "balena-lint -e js --fix lib plugins"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,10 @@
   },
   "homepage": "https://github.com/resin-io-modules/detectorist#readme",
   "dependencies": {
+    "@balena/lint": "^6.1.1",
     "bluebird": "^3.5.1",
     "lodash": "^4.17.10",
+    "prettier": "^2.4.1",
     "yamljs": "^0.3.0"
   },
   "bin": {
