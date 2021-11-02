@@ -11,7 +11,7 @@ module.exports = {
 		return readYAML(join(path, CONTRACT_PATH))
 			.then((result) => {
 				// data.$transformer implies opt in to transformers flow
-				if (result?.data?.$transformer) {
+				if (result && result.data && result.data.$transformer) {
 					return true;
 				}
 				return false;
