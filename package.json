@@ -1,6 +1,6 @@
 {
   "name": "detectorist",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Tool to determine what sort of project a repo contains",
   "main": "lib/index.js",
   "directories": {
@@ -31,6 +31,6 @@
     "detectorist": "./bin/detectorist.js"
   },
   "versionist": {
-    "publishedAt": "2021-10-27T11:05:16.514Z"
+    "publishedAt": "2021-11-02T15:08:37.284Z"
   }
 }
